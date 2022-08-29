@@ -21,7 +21,7 @@ package $PACKAGE
 var Words []string = []string{
 EOF
 
-    find "$TMP/final" | grep -E '(english|$PACKAGE)-words' | xargs sort -m | awk '{print "`"$1"`," }' >> $PACKAGE/$PACKAGE.go
+    find "$TMP/final" | grep -E "(english|$PACKAGE)-words" | xargs sort -m | awk '{print "`"$1"`," }' >> $PACKAGE/$PACKAGE.go
     echo "\n}\n" >> $PACKAGE/$PACKAGE.go
 done
 
